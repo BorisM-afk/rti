@@ -1,6 +1,6 @@
 # RTI3 – L'essentiel (antisèche)
 
-[← Retour au sommaire](README.md) · [Fiches complètes](fiches-completes.md)
+[← Retour au sommaire](README.md) · [Fiches complètes](fiches-completes.md) · [Méthodes GIMP](gimp.md)
 
 ## 1. Les formules, expliquées simplement
 
