@@ -5,6 +5,7 @@ Révisions pour le TP noté, BUT MMI 2e année.
 | Fichier | Contenu |
 |---|---|
 | [**antiseche.md**](antiseche.md) | **À ouvrir en premier.** Formules expliquées simplement + antisèche de manip Photoshop / GIMP / Tenacity, TP par TP |
+| [fiche-derniere-minute.pdf](fiche-derniere-minute.pdf) | Fiche d'un pote (2 pages) : valeurs concrètes des TP (Tournesol, seuil, zoning, processeur d'images), formules de calcul et menus Tenacity |
 | [fiches-completes.md](fiches-completes.md) | Les 7 fiches détaillées : images, web, vidéo, codage entropique, audio, article 1994 |
 
 ## Accès rapide
