@@ -2,7 +2,7 @@
 
 [← Retour au sommaire](README.md) · [Antisèche](antiseche.md)
 
-Valable pour GIMP 2.10 et GIMP 3 (les menus sont quasiment identiques). Si un menu n'est pas là où je l'indique, tape **/** dans GIMP : ça ouvre la recherche d'actions, et tu peux taper « seuil », « courbes », « convolution »…
+Écrit pour **GIMP 2.10.34** (la version des postes de l'IUT). Si un menu n'est pas là où je l'indique, tape **/** dans GIMP : ça ouvre la recherche d'actions, et tu peux taper « seuil », « courbes », « convolution »…
 
 ## Avant de commencer
 
@@ -13,6 +13,8 @@ Valable pour GIMP 2.10 et GIMP 3 (les menus sont quasiment identiques). Si un me
 | Afficher l'histogramme en permanence | Fenêtres › Fenêtres ancrables › **Histogramme** |
 | Lire la valeur d'un pixel | Fenêtres › Fenêtres ancrables › **Pointeur** |
 | Annuler / tout recommencer | Ctrl+Z / Fichier › Rétablir |
+
+**Spécial 2.10 : linéaire ou perceptuel.** Les fenêtres Histogramme, Niveaux et Courbes ont deux petits boutons en haut à droite : **linéaire** et **perceptuel**. Choisis **perceptuel** pour avoir le même histogramme et les mêmes valeurs (0 à 255) que dans le cours et dans Photoshop. En linéaire, l'histogramme a une autre forme et les valeurs ne correspondent plus.
 
 ---
 
@@ -76,7 +78,7 @@ Pour chaque image : **définition finale** (px), **format** + pourquoi (photo / 
 **GIMP n'a pas de processeur d'images intégré.** Selon ce qui est installé sur le poste :
 
 1. **Photoshop dispo ?** Fais cette partie sur Photoshop : Fichier › Scripts › Processeur d'images (voir l'[antisèche](antiseche.md#tp1--optimiser-des-images-photoshop-gimp-word)).
-2. **Plugin BIMP** dans GIMP (menu Fichier › Batch Image Manipulation…) : Add › Resize (300 × 200, garder les proportions) + Change format (JPEG, qualité ≈ 80) › choisir le dossier de sortie › Apply.
+2. **Plugin BIMP** dans GIMP 2.10, s'il est installé (menu Fichier › Batch Image Manipulation…) : Add › Resize (300 × 200, garder les proportions) + Change format (JPEG, qualité ≈ 80) › choisir le dossier de sortie › Apply.
 3. **XnConvert / IrfanView** (souvent installés) : IrfanView › Fichier › Conversion/Renommage par lot › Format JPG, Options qualité ≈ 80, « Utiliser options avancées » › Redimensionner 300 × 200 en gardant les proportions.
 
 À commenter : l'image tient **dans** 300 × 200 sans être déformée (300 × 200 pour une photo 3:2, 300 × 169 pour du 16:9…), et les JPEG sont beaucoup plus légers que les BMP. La qualité 8 de Photoshop (sur 12) correspond à peu près à 70–80 % ailleurs.
@@ -132,6 +134,8 @@ L'histogramme est retourné en miroir (ce qui était à gauche passe à droite).
 
 **Couleurs › Seuil**
 
+Laisse le **Canal** sur **Valeur**.
+
 Dans GIMP le seuil a **deux valeurs** (bas et haut) : les pixels **entre** les deux deviennent blancs, les autres noirs. C'est donc directement le « double seuillage » du cours.
 
 - **Seuillage simple** : laisse la valeur haute à **255** et déplace seulement la valeur **basse**.
@@ -148,7 +152,7 @@ Dans GIMP le seuil a **deux valeurs** (bas et haut) : les pixels **entre** les d
 
 - La grille fait **5 × 5** : utilise seulement le **carré 3 × 3 du centre**, laisse le reste à 0. La case centrale = le pixel traité.
 - **Diviseur** = l'« Échelle » de Photoshop : la somme des coefficients.
-- **Décalage** : ajouté au résultat. Selon la version, il va de 0 à 255 (mets **128**) ou de −1 à 1 / 0 à 1 (mets **0,5**).
+- **Décalage** : ajouté au résultat. **Dans GIMP 2.10, il va de −1 à 1** (et non de 0 à 255) : pour l'équivalent du décalage 128 de Photoshop, mets **0,5**.
 - **Normaliser** : si coché, GIMP calcule le diviseur tout seul (pratique pour les flous). **Décoche-le** pour Sobel et Laplace.
 - **Bordure** : Étendre (ou Recadrer). Coche **Aperçu**.
 
@@ -156,8 +160,8 @@ Dans GIMP le seuil a **deux valeurs** (bas et haut) : les pixels **entre** les d
 |---|---|---|---|---|
 | Moyenneur (passe-bas) | 1 1 1 / 1 1 1 / 1 1 1 | 9 | 0 | Flou, débruitage |
 | Gaussien (passe-bas) | 1 2 1 / 2 4 2 / 1 2 1 | 16 | 0 | Flou plus doux |
-| Sobel horizontal (passe-haut) | 1 0 −1 / 2 0 −2 / 1 0 −1 | 1 | 128 (ou 0,5) | Contours verticaux |
-| Laplace (passe-haut) | 0 1 0 / 1 −4 1 / 0 1 0 | 1 | 128 (ou 0,5) | Contours dans toutes les directions |
+| Sobel horizontal (passe-haut) | 1 0 −1 / 2 0 −2 / 1 0 −1 | 1 | 0,5 | Contours verticaux |
+| Laplace (passe-haut) | 0 1 0 / 1 −4 1 / 0 1 0 | 1 | 0,5 | Contours dans toutes les directions |
 
 - Sans décalage, Sobel et Laplace donnent une image **presque noire** avec les contours en clair : c'est normal, la somme des coefficients vaut 0.
 - Pour comparer : applique sur une copie (Image › Dupliquer) et mets les deux fenêtres côte à côte.
