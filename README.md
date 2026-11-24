@@ -14,6 +14,7 @@ Révisions pour le TP noté, BUT MMI 2e année.
 - [Formules expliquées](antiseche.md#1-les-formules-expliquées-simplement)
 - [GIMP – TP1 optimisation](gimp.md#tp1--optimisation-des-images)
 - [GIMP – TP2 traitement d'image](gimp.md#tp2--traitement-des-images)
+- [GIMP – le menu Couleurs (courbes, histogrammes)](gimp.md#le-menu-couleurs-courbes-et-histogrammes)
 - [Manip TP1 – optimisation images](antiseche.md#tp1--optimiser-des-images-photoshop-gimp-word)
 - [Manip TP2 – traitement d'image](antiseche.md#tp2--traitement-dimage-photoshop-gimp)
 - [Manip TP3 – amplification et filtres](antiseche.md#tp3--amplification-et-filtres-tenacity)

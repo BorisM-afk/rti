@@ -170,6 +170,44 @@ Dans GIMP le seuil a **deux valeurs** (bas et haut) : les pixels **entre** les d
 
 ---
 
+## Le menu Couleurs (courbes et histogrammes)
+
+Dans GIMP 2.10, presque tout ce qui touche à l'histogramme est dans le menu **Couleurs** :
+
+| Menu | Ce que ça fait | Effet sur l'histogramme |
+|---|---|---|
+| Couleurs › **Info › Histogramme** | Ouvre la fenêtre Histogramme | Lecture seule (Moyenne, Écart-type, Médiane, Pixels) |
+| Couleurs › **Niveaux** | Curseurs d'entrée et de sortie | Entrée resserrée → étiré ; sortie resserrée → compressé |
+| Couleurs › **Courbes** | Courbe tonale (la LUT du cours) | Au-dessus de la diagonale → décalé à droite (plus clair) ; en dessous → à gauche |
+| Couleurs › **Luminosité-Contraste** | Réglage simple | Luminosité : tout l'histogramme glisse ; contraste : il s'étale ou se resserre |
+| Couleurs › **Exposition** | Corrige une photo sur- ou sous-exposée | Glisse vers la droite ou la gauche |
+| Couleurs › **Inverser** | Négatif (255 − v) | Miroir |
+| Couleurs › **Seuil** | Binarisation | Il ne reste que 2 pics : noir et blanc |
+| Couleurs › **Postériser** | Réduit le nombre de niveaux | Quelques barres séparées |
+| Couleurs › **Auto › Égaliser** | Égalisation | Étalé, « en peigne » |
+| Couleurs › **Auto › Étirer le contraste** | Étirement automatique | Le min va à 0 et le max à 255 |
+
+Astuces dans les fenêtres **Niveaux** et **Courbes** (2.10) :
+
+- En haut, mets **Canal = Valeur** pour la luminosité, ou R, V, B pour une seule couleur. Coche **Aperçu**.
+- Les deux boutons **linéaire / perceptuel** : prends **perceptuel**.
+- Dans Niveaux, le bouton **« Modifier ces paramètres en tant que courbes »** convertit le réglage en courbe tonale. C'est pratique pour montrer qu'un réglage de niveaux **est** une courbe (lien niveaux ↔ courbe tonale du cours).
+- Dans Niveaux, les **pipettes** (noir, gris, blanc) fixent le point noir et le point blanc en cliquant sur l'image.
+- Le menu **Préréglages** permet d'enregistrer un réglage pour le réappliquer.
+- **Courbes : les formes à connaître**
+
+| Forme de la courbe | Opération du cours |
+|---|---|
+| Diagonale | Aucune modification |
+| Au-dessus de la diagonale | Éclaircir |
+| En dessous de la diagonale | Assombrir |
+| En S | Plus de contraste |
+| Droite plus pentue, coupée en bas et en haut | Étirement d'histogramme |
+| Diagonale descendante | Inversion (négatif) |
+| Marche verticale (0 puis 255 d'un coup) | Seuillage |
+
+---
+
 ## Résumé des menus GIMP
 
 | Manip | Menu GIMP |
